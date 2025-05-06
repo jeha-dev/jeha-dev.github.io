@@ -1,0 +1,71 @@
+@import '../base/mixin';
+  
+/* scroll  common animation */
+.box-ani {
+	-webkit-transition: transform 1s ease, opacity 1s ease;
+	-moz-transition: transform 1s ease, opacity 1s ease;
+	-ms-transition: transform 1s ease, opacity 1s ease;
+	-o-transition: transform 1s ease, opacity 1s ease;
+	transition: transform 1s ease, opacity 1s ease;
+	opacity:0;
+}
+.tran02{
+	-webkit-transition-delay: 0.28s;
+	-moz-transition-delay: 0.28s;
+	-ms-transition-delay: 0.28s;
+	-o-transition-delay: 0.28s;
+	transition-delay: 0.28s;
+}
+.tran04{
+	-webkit-transition-delay: 0.4s;
+	-moz-transition-delay: 0.4s;
+	-ms-transition-delay: 0.4s;
+	-o-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+.tran06{
+	-webkit-transition-delay: 0.6s;
+	-moz-transition-delay: 0.6s;
+	-ms-transition-delay: 0.6s;
+	-o-transition-delay: 0.6s;
+	transition-delay: 0.6s;
+}
+
+.bottom-top {
+	transform: translate(0,30px);
+	-webkit-transform: translate(0,30px);
+	-moz-transform: translate(0,30px);
+	-ms-transform: translate(0,30px);
+	-o-transform: translate(0,30px);
+}
+.left-right {
+	transform: translate(50px,0);
+	-webkit-transform: translate(50px,0);
+	-moz-transform: translate(50px,0);
+	-ms-transform: translate(50px,0);
+	-o-transform: translate(50px,0);
+}
+.right-left {
+	transform: translate(30px,0);
+	-webkit-transform: translate(30px,0);
+	-moz-transform: translate(30px,0);
+	-ms-transform: translate(30px,0);
+	-o-transform: translate(30px,0);
+}
+
+.top-bottom{
+	transform: translate(0,50px);
+	-webkit-transform: translate(0,50px);
+	-moz-transform: translate(0,50px);
+	-ms-transform: translate(0,50px);
+	-o-transform: translate(0,50px);	
+}
+
+.aniload{
+	transform: translate(0,0);
+	-webkit-transform: translate(0,0);
+	-moz-transform: translate(0,0);
+	-ms-transform: translate(0,0);
+	-o-transform: translate(0,0);
+	opacity:1;
+}

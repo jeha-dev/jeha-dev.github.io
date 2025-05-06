@@ -1,0 +1,107 @@
+/* ============= mixin 모음 ============= */
+
+//grid-box
+@mixin gridBox($num:3) {
+    display: grid;
+    grid-template-columns: repeat($num, 1fr);
+    grid-template-rows: max-content;
+}
+
+// flex-box
+$flex-map: (
+    start: flex-start,
+    end: flex-end,
+    between: space-between,
+    around: space-around,
+    stretch: stretch,
+    center: center,
+);
+//  @include flexRow(start, end)
+@function _get-flex-value($key) {
+    @return map-get($flex-map, $key);
+}
+@mixin flexRow($jc: center, $ai: center) {
+    display: flex;
+    align-items: _get-flex-value($ai);
+    justify-content: _get-flex-value($jc);
+    flex-direction:row;
+}
+@mixin flexColum() {
+    display:flex;
+    flex-direction:column;
+}
+
+// box-shadow
+@mixin boxShadow   ($x:0, 
+                    $y:3px, 
+                    $blur:20px, 
+                    $spread:10px, 
+                    $color:rgba(0, 0, 0, 0.03)) {
+    box-shadow: $x $y $blur $spread $color 
+}
+
+// ellipsis
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word; // 공백 없을때 글자 잘림 방지
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+@mixin pretendard-Headline {
+    font-family: "Pretendard";
+    font-weight: 900;
+    letter-spacing: -0.3px;
+}
+@mixin pretendard-bold {
+    font-family: "Pretendard";
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+@mixin pretendard-medium {
+    font-family: 'Pretendard';
+	font-weight: 600;
+}
+@mixin pretendard-regular {
+    font-family: 'Pretendard';
+	font-weight: 400;
+}
+
+@mixin Raleway-exBold {
+    font-family: 'Raleway';
+	font-style:normal;
+	font-weight:800;
+}
+@mixin Raleway-light {
+    font-family: 'Raleway';
+	font-style:normal;
+	font-weight:300;
+}
+
+// color
+$colorBlack: #000000;
+$colorGray01: #181A1B;
+$colorGray02: #3B4044;
+$colorGray03: #66707A;
+$colorGray04: #A8B3BD;
+$colorGray05: #DCE0E5;
+$colorWhite2: #F3F4F6;
+$colorWhite: #ffffff;
+$point-color-blue: #0E45EE;
+$point-color-red: #E22A21;
+
+// easing
+$power1in: cubic-bezier(0.11, 0, 0.5, 0);
+$power1out: cubic-bezier(0.5, 1, 0.89, 1);
+$power1inOut: cubic-bezier(0.45, 0, 0.55, 1);
+$power4in: cubic-bezier(0.64, 0, 0.78, 0);
+$power4out: cubic-bezier(0.22, 1, 0.36, 1);
+$power4inOut: cubic-bezier(0.83, 0, 0.17, 1);

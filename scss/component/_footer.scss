@@ -1,0 +1,31 @@
+@import '../base/mixin';
+
+/* footer */
+.footer {
+	width:100%;
+	padding:30px 20px;
+	background-color:#FFF6E4;
+	@include flexRow( between, center);
+
+	.txt-copyright,
+	.link-wrap a{
+		color:$colorGray01;
+		@include Raleway-light;
+		font-size:1.6rem;
+		letter-spacing: -0.03em;
+	}
+	.link-wrap a{
+		margin-left:auto;
+		text-decoration:underline;
+	}
+
+}
+@media (max-width: 720px) {
+	.footer {
+		padding:20px 16px;
+		.txt-copyright,
+		.link-wrap a{
+			font-size:14px;
+		}
+	}
+}
