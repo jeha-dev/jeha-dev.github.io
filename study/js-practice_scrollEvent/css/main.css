@@ -1,0 +1,308 @@
+@charset 'utf-8';
+
+/* 기본 태그 reset */
+html {
+	font-family: 'Noto sans KR', sans-serif;
+	font-size: 14px;
+}
+body {
+	overflow-x: hidden;
+	color:rgba(29,29,31,1);
+	letter-spacing: -0.05em;
+	background-color:#fff;
+}
+p{
+	line-height: 1.6;
+}
+a {
+	color:rgba(29,29,31,1);
+	text-decoration: none;
+}
+
+
+/* ======== 스타일 작성 ======== */
+/*
+	순서 : 
+	(1)height,padding,margin : em, font-size : rem으로 모바일 먼저
+	(2)@media 적용 후 PC 
+
+	간격이나 사이징은 em : 루트폰트사이즈 14px의 몇배로 가겠다
+	font-size rem :: 현재 뷰포트에서의 폰트 사이즈로 지정하겠다
+	그러므로
+	height 3em / 높이를 font-size 2.5rem ?? 2.5rem의 2배로 잡겠다(14px*2.5 의 3배)
+*/
+/* loading */
+.loading {
+	display: none;
+}
+.container {
+	position:relative;
+	overflow-x: hidden;
+}
+
+/* 헤더 */
+.global-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 44px;
+	padding: 0 1rem;
+	z-index: 10;
+}
+.local-nav {
+	position: absolute;
+	top: 45px;
+	left: 0;
+	width: 100%;
+	height: 52px;
+	padding: 0 1rem;
+	border-bottom: 1px solid #ddd;
+	z-index: 11;
+}
+.local-nav-sticky .local-nav {
+	position: fixed;
+	top: 0;
+	background: rgba(255, 255, 255, 0.1);
+
+	-webkit-backdrop-filter: saturate(180%) blur(15px);
+	backdrop-filter: saturate(180%) blur(15px);
+}
+.global-nav-links,
+.local-nav-links {
+	display: flex;
+	align-items: center;
+	max-width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+.global-nav-links {
+	justify-content: space-between;
+}
+.local-nav-links a {
+	font-size: 0.8rem;
+}
+.local-nav-links a:not(.product-name) {
+	margin-left: 2em;
+}
+.local-nav-links .product-name {
+	/* logo 영역_AirMug Pro */
+	margin-right: auto;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+/* 푸터 */
+.footer {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:7rem;
+	background-color:darkorange;
+}
+
+
+/* section */
+.scroll-section {
+	padding-top:50vh;
+	border-top:2px solid red;
+	border-bottom:2px solid greenyellow;
+}
+.scroll-section-x {
+	width: 100vw;
+	height: 100%;
+	background-color: antiquewhite;
+}
+.scroll-section-x .list-project{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	column-gap: 30px;
+}
+.scroll-section-x .list-project li{
+	flex: 1;
+	height: 100%;
+	background-color: black;
+}
+
+.scroll-section-x .list-project li strong{
+	color: #fff;
+}
+.scroll-section-x .list-project li .thumb-box{
+	width: 48%;
+	height: 100%;
+	background-color: #d3d3d3;
+}
+
+.main-message {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	margin:5px 0;
+	height:3em;
+	font-size:2.5rem;
+	opacity:0;
+
+	top:35vh;
+}
+.main-message p {
+	font-weight:bold;
+	line-height:1.2;
+	text-align:center;
+}
+.main-message small {
+	display:block;
+	margin-bottom:0.5em;
+	font-size:1rem;
+}
+.desc-message {
+	width:40%;
+	top:0vh;
+	font-weight:bold;
+	opacity:0;
+	word-break: keep-all;
+	opacity: 0;
+}
+.desc-message .pin {
+	width:1px;
+	height:100px;
+	background-color:rgba(29,29,31,1);
+}
+.mid-message {
+	margin: 0 auto;
+	padding:0 1rem;
+	font-size:2rem;
+	color:#888;
+}
+.mid-message strong{
+	color:rgba(29,29,31,1);
+}
+.mid-message , .canvas-caption, #scroll-section-1 .description{
+	max-width:1000px;
+}
+.canvas-caption {
+	margin: -10rem auto 0;
+	padding:0 1rem;
+	color:#888;
+	font-size:1.2rem;
+	text-align:left;
+}
+
+/* id 지정 스타일 */
+#scroll-section-0 {
+	padding-top:96px;
+}
+#scroll-section-0 h1{
+	position: relative;
+	padding-top: 40vh;
+	font-size:4rem;
+	text-align:center;
+	z-index: 2;
+}
+#scroll-section-1 .description{
+	padding:0 1rem;
+	font-size:1.2rem;
+	color:#888;
+}
+#scroll-section-1 .description strong{
+	float:left;
+	margin-right:0.2em; /* 글자크기의 0.2배(20%) 크기로 지정 */
+	font-size:3rem;
+	color:rgba(29,29,31,1);
+}
+#scroll-section-2 .main-message{
+	font-size:3.5rem;
+	word-break: keep-all;
+}
+#scroll-section-2 .b{
+	top:20%;
+	left: 54%;
+}
+#scroll-section-2 .c{
+	top:18%;
+	left:55%;
+}
+
+/* sticky element */
+.sticky-elem{
+	display:none;
+	position:fixed;
+	left:0;
+}
+.sticky-elem:not(.desc-message) {
+	width:100%;
+}
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem,
+#show-scene-4 #scroll-section-4 .sticky-elem {
+	display:block;
+}
+#scroll-section-3 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.sticky-elem-canvas {
+	top: 0;
+	height: 100%;
+}
+.sticky-elem-canvas canvas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.image-blend-canvas {
+	background-color: lightblue;
+}
+
+@media screen and (min-width: 1024px){
+	/* 순서
+	
+	(1) font 조정 : vw + rem 적용(거대한 폰트는 vw, 설명글 등 고정되어도 되면 rem)
+
+	*/
+
+	.main-message {
+		font-size:4vw;
+	}
+	.main-message small {
+		font-size:1.5vw;
+	}
+	.desc-message {
+		width:20%;
+	}
+	.mid-message {
+		font-size:4vw;
+	}
+	.canvas-caption {
+		font-size:2rem;
+	}
+	#scroll-section-0 h1{
+		font-size:9vw;
+	}
+	#scroll-section-1 .description{
+		font-size:2rem;
+	}
+	#scroll-section-1 .description strong{
+		font-size:6rem;
+	}
+	#scroll-section-2 .main-message{
+		font-size:6vw;
+	}
+	#scroll-section-2 .b{
+		top: 10%;
+		left: 40%;
+	}
+	#scroll-section-2 .c{
+		top: 15%;
+		left: 45%;
+	}
+	.canvas-caption {
+		margin: -8rem auto 0;
+	}
+	
+} 
